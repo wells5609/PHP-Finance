@@ -1,17 +1,23 @@
-CorpFin-PHP
+Finance-PHP
 =====================
 
-PHP library for doing various corporate finance... things.
+Corporate finance PHP library.
 
 ##Features
  * Host a stock data API on your own server using data from Yahoo Finance (**see note below**)
  * Calculate (estimate) a stock's intrinsic price using the Dividend Discount Model
- * Calculate various metrics used in corporate finance/valuation, such as:
-   * Present value (`finance_pv()`)
-   * Net present value (`finance_npv()`)
-   * Standard deviation (`finance_stddev()`)
-   * (Market) risk premium (`finance_risk_premium()`)
-   * Cost of equity (`finance_capm_cost_of_equity()`)
+ * Calculate various statistics:
+   * Variance (`variance()`)
+   * Mean (`mean()`)
+   * Covariance (`covariance()`)
+   * Standard deviation (`stddev()`)
+   * Sum of squares (`sumofsquares()`)
+   * Present value (`pv()`)
+   * Net present value (`npv()`)
+ * Calculate various values for use in corporate finance and valuation:
+   * Beta (`beta()`)
+   * Cost of equity per CAPM (`capm_cost_of_equity()`)
+   * Earnings per share, asset turnover, inventory turnover, current & quick ratios, days receivables, ROA, ROE, P/E, P/S, P/B, earnings yield, free cash flow yield, and more
 
 _**Note on data**: This software package is for educational purposes only; it shall not be used to redistribute data  sourced from third parties unless the user is explicitly authorized to do so. The author will not be held responsible for any misuse of this software. By using this software, you are agreeing to Yahoo's Terms of Service._
 
