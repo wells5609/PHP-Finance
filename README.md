@@ -17,7 +17,7 @@ Corporate finance PHP library.
  * Calculate various values for use in corporate finance and valuation:
    * Beta (`beta()`)
    * Cost of equity per CAPM (`capm_cost_of_equity()`)
-   * Earnings per share, asset turnover, inventory turnover, current & quick ratios, days receivables, ROA, ROE, P/E, P/S, P/B, earnings yield, free cash flow yield, and more
+   * Earnings per share, asset turnover, inventory turnover, current & quick ratios, times interest earned, leverage, days receivables, ROA, ROE, P/E, P/S, P/B, earnings yield, free cash flow yield, and more
 
 _**Note on data**: This software package is for educational purposes only; it shall not be used to redistribute data  sourced from third parties unless the user is explicitly authorized to do so. The author will not be held responsible for any misuse of this software. By using this software, you are agreeing to Yahoo's Terms of Service._
 
