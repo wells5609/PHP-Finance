@@ -1,0 +1,23 @@
+{
+	"name": "wells5609/finance",
+	"type": "library",
+	"description": "Corporate finance library for PHP.",
+	"keywords": ["Finance", "Financial", "Corporate", "Stock", "Valuation"],
+	"homepage": "https://github.com/wells5609/Finance-PHP",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "wells",
+			"email": "wellspeterson@live.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"Finance\\": "src/"
+		}
+	},
+	"minimum-stability": "dev"
+}
