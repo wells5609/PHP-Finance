@@ -73,7 +73,7 @@ $cons = new \Finance\ConstantGrowthModel();
 $cons
   ->setEPS(7.7) // Use forward EPS for constant growth
   ->setDiscountRate(0.09)
-  ->setGrowthRate(0.1); // should be less than the discount rate, otherwise you won't get a number
+  ->setGrowthRate(0.025); // should be less than the discount rate, otherwise you won't get a number
 
 $cgm_value = $cons->calculate(); // returns 118.46
 ```
