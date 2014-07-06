@@ -186,9 +186,35 @@ function ddm_required_return($price, $dividend, $terminal_growth_rate) {
  * 
  * @param float $interest_expense Interest expense payments for the most recent year.
  * @param float $avg_tot_debt Average total debt of the firm over the year.
+ * @return float The required return on the firm's debt.
  */
-function debt_required_return($interest_expense, $avg_tot_debt) {
+function required_return_on_debt($interest_expense, $avg_tot_debt) {
 	return percent($interest_expense, $avg_tot_debt);
+}
+
+/**
+ * Calculates a security's intrinsic value using the zero growth model.
+ * 
+ * @param float $eps Earnings per share (this year).
+ * @param float $discount_rate The discount rate, possibly the expected return of the market.
+ * @return float Intrinsic value at zero growth.
+ */
+function finance_valuation_zero_growth($eps, $discount_rate) {
+	$model = new \Finance\ZeroGrowthModel($eps, $discount_rate);
+	return $model->calculate();
+}
+
+/**
+ * Calculates a security's intrinsic value using the constant growth model.
+ * 
+ * @param float $forward_eps Earnings per share over the next 12 months.
+ * @param float $discount_rate Discount rate
+ * @param float $growth_rate Rate at which earnings grow for infinity.
+ * @return float Intrinsic value at constant growth.
+ */
+function finance_valuation_constant_growth($forward_eps, $discount_rate, $growth_rate) {
+	$model = new \Finance\ConstantGrowthModel($forward_eps, $discount_rate, $growth_rate);
+	return $model->calculate();
 }
 
 /**

@@ -181,3 +181,22 @@ function percent_change_array(array $values) {
 	array_shift($keys);
 	return array_combine($keys, $pcts);
 }
+
+/**
+ * Returns the weighted average of a series of values.
+ * 
+ * @param array $values Indexed array of values.
+ * @param array $weights Indexed array of weights corresponding to each value.
+ * @return float Weighted average of values.
+ */
+function weighted_average(array $values, array $weights) {
+	if (count($values) !== count($weights)) {
+		trigger_error("Must pass the same number of weights and values.");
+		return null;
+	}
+	$weighted_sum = 0.0;
+	foreach($values as $i => $val) {
+		$weighted_sum += $val*$weights[$i];
+	}
+	return floatval($weighted_sum/array_sum($weights));
+}

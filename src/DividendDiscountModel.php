@@ -2,7 +2,7 @@
 
 namespace Finance;
 
-class DividendDiscountModel {
+class DividendDiscountModel implements ValuationModel {
 	
 	protected $price;
 	protected $dividend;
