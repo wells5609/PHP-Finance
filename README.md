@@ -38,7 +38,7 @@ Assume the following information (which is accurate as of July 2014):
  * 12-mo. forward EPS (analyst consensus est.): $7.70
 
 #####Dividend Discount Model
-The DDM states that a stock's current value is the present value of the sum of the its future dividends.
+The DDM states that a stock's current value is equal to the present value of the sum of its future dividends.
 ```php
 $ddm = new \Finance\DividendDiscountModel();
 
@@ -73,7 +73,7 @@ $cons = new \Finance\ConstantGrowthModel();
 $cons
   ->setEPS(7.7) // Use forward EPS for constant growth
   ->setDiscountRate(0.09)
-  ->setGrowthRate(); // should be less than the discount rate, otherwise you won't get a number
+  ->setGrowthRate(0.1); // should be less than the discount rate, otherwise you won't get a number
 
 $cgm_value = $cons->calculate(); // returns 118.46
 ```
