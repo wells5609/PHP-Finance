@@ -1,8 +1,8 @@
 <?php
 
-namespace Finance;
+namespace Finance\Model;
 
-class ZeroGrowthModel implements ValuationModel {
+class ZeroGrowth implements ValuationModel {
 	
 	protected $eps;
 	protected $discount_rate;
@@ -13,12 +13,12 @@ class ZeroGrowthModel implements ValuationModel {
 	}
 	
 	public function setEPS($eps) {
-		$this->eps = floatval($eps);
+		$this->eps = (string) $eps;
 		return $this;
 	}
 	
 	public function setDiscountRate($rate) {
-		$this->discount_rate = floatval($rate);
+		$this->discount_rate = (string) $rate;
 		return $this;
 	}
 	
@@ -28,9 +28,9 @@ class ZeroGrowthModel implements ValuationModel {
 			throw new \RuntimeException("Must set EPS and discount rate.");
 		}
 		
-		$value = floatval($this->eps/$this->discount_rate);
+		$value = $this->eps/$this->discount_rate;
 		
-		return is_finite($value) ? $value : false;
+		return is_finite($value) ? (string) $value : false;
 	}
 	
 }

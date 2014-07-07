@@ -19,27 +19,27 @@ class DiscountedCashFlow {
 	protected $npv;
 	
 	public function setInitialCashflow($cashflow) {
-		$this->initial_cashflow = floatval($cashflow);
+		$this->initial_cashflow = (string) $cashflow;
 		return $this;
 	}
 	
 	public function setDiscountRate($rate) {
-		$this->discount_rate = floatval($rate);
+		$this->discount_rate = (string) $rate;
 		return $this;
 	}
 	
 	public function setGrowthRate($rate) {
-		$this->growth_rate = floatval($rate);
+		$this->growth_rate = (string) $rate;
 		return $this;
 	}
 	
 	public function setNumberPeriods($n) {
-		$this->number_periods = intval($n);
+		$this->number_periods = (int) $n;
 		return $this;
 	}
 	
 	public function setTerminalGrowthRate($rate) {
-		$this->terminal_growth_rate = floatval($rate);
+		$this->terminal_growth_rate = (string) $rate;
 		return $this;
 	}
 	
@@ -54,9 +54,9 @@ class DiscountedCashFlow {
 			$pv = array_sum($this->cashflows_pv);
 			
 			if (isset($this->terminal_cashflow_pv)) {
-				$this->npv = $this->terminal_cashflow_pv + $pv;
+				$this->npv = strval($this->terminal_cashflow_pv + $pv);
 			} else {
-				$this->npv = $pv;
+				$this->npv = (string) $pv;
 			}
 		}
 		

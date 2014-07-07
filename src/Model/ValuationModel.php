@@ -1,13 +1,16 @@
 <?php
 
-namespace Finance;
+namespace Finance\Model;
 
+/**
+ * Contract for a model which calculates an asset's "intrinsic" value.
+ */
 interface ValuationModel {
 	
 	/**
 	 * Calculates the intrinsic value as found by the model.
 	 * 
-	 * @return float Intrinsic value
+	 * @return string Intrinsic value
 	 */
 	public function calculate();
 	

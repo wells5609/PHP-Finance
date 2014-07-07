@@ -1,8 +1,8 @@
 <?php
 
-namespace Finance;
+namespace Finance\Model;
 
-class DividendDiscountModel implements ValuationModel {
+class DividendDiscount implements ValuationModel {
 	
 	protected $price;
 	protected $dividend;
@@ -20,32 +20,32 @@ class DividendDiscountModel implements ValuationModel {
 	}
 	
 	public function setPrice($price) {
-		$this->price = floatval($price);
+		$this->price = (string) $price;
 		return $this;
 	}
 	
 	public function setDividend($div) {
-		$this->dividend = floatval($div);
+		$this->dividend = (string) $div;
 		return $this;
 	}
 	
 	public function setNumberYears($num) {
-		$this->number_years = intval($num);
+		$this->number_years = (int) $num;
 		return $this;
 	}
 	
 	public function setGrowthRate($rate) {
-		$this->growth_rate = floatval($rate);
+		$this->growth_rate = (string) $rate;
 		return $this;
 	}
 	
 	public function setTerminalGrowthRate($rate) {
-		$this->terminal_growth_rate = floatval($rate);
+		$this->terminal_growth_rate = (string) $rate;
 		return $this;
 	}
 	
 	public function setCostOfEquity($rate) {
-		$this->cost_of_equity = floatval($rate);
+		$this->cost_of_equity = (string) $rate;
 		return $this;
 	}
 	
@@ -70,7 +70,7 @@ class DividendDiscountModel implements ValuationModel {
 			return null;
 		}
 		
-		return $this->required_return = $this->terminal_growth_rate + ($this->dividend/$this->price);
+		return $this->required_return = strval($this->terminal_growth_rate + ($this->dividend/$this->price));
 	}
 	
 	public function calculate() {

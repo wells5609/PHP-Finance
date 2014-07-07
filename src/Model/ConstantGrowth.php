@@ -1,8 +1,8 @@
 <?php
 
-namespace Finance;
+namespace Finance\Model;
 
-class ConstantGrowthModel implements ValuationModel {
+class ConstantGrowth implements ValuationModel {
 	
 	protected $forward_eps;
 	protected $discount_rate;
@@ -15,17 +15,17 @@ class ConstantGrowthModel implements ValuationModel {
 	}
 	
 	public function setEPS($eps) {
-		$this->forward_eps = floatval($eps);
+		$this->forward_eps = (string) $eps;
 		return $this;
 	}
 	
 	public function setDiscountRate($rate) {
-		$this->discount_rate = floatval($rate);
+		$this->discount_rate = (string) $rate;
 		return $this;
 	}
 	
 	public function setGrowthRate($rate) {
-		$this->growth_rate = floatval($rate);
+		$this->growth_rate = (string) $rate;
 		return $this;
 	}
 	
@@ -35,9 +35,9 @@ class ConstantGrowthModel implements ValuationModel {
 			throw new \RuntimeException("Must set EPS, discount rate, and growth rate.");
 		}
 		
-		$value = floatval($this->forward_eps/($this->discount_rate-$this->growth_rate));
+		$value = $this->forward_eps/($this->discount_rate-$this->growth_rate);
 		
-		return is_finite($value) ? $value : false;
+		return is_finite($value) ? (string) $value : false;
 	}
 	
 }

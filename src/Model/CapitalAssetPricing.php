@@ -1,8 +1,8 @@
 <?php
 
-namespace Finance;
+namespace Finance\Model;
 
-class CapitalAssetPricingModel {
+class CapitalAssetPricing {
 	
 	protected $risk_free_rate;
 	protected $expected_return_asset;
@@ -17,27 +17,27 @@ class CapitalAssetPricingModel {
 	}
 	
 	public function setRiskFreeRate($rate) {
-		$this->risk_free_rate = floatval($rate);
+		$this->risk_free_rate = (string) $rate;
 		return $this;
 	}
 	
 	public function setExpectedMarketReturn($rate) {
-		$this->expected_return_market = floatval($rate);
+		$this->expected_return_market = (string) $rate;
 		return $this;
 	}
 	
 	public function setExpectedAssetReturn($rate) {
-		$this->expected_return_asset = floatval($rate);
+		$this->expected_return_asset = (string) $rate;
 		return $this;
 	}
 	
 	public function setMarketRiskPremium($rate) {
-		$this->market_risk_premium = floatval($rate);
+		$this->market_risk_premium = (string) $rate;
 		return $this;
 	}
 	
 	public function setBeta($beta) {
-		$this->beta = floatval($beta);
+		$this->beta = (string) $beta;
 		return $this;
 	}
 	
@@ -62,7 +62,7 @@ class CapitalAssetPricingModel {
 				return null;
 			}
 			
-			$this->market_risk_premium = $this->expected_return_market - $this->getRiskFreeRate();
+			$this->market_risk_premium = strval($this->expected_return_market-$this->getRiskFreeRate());
 		}
 		
 		return $this->market_risk_premium; 
