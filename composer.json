@@ -12,7 +12,8 @@
 		}
 	],
 	"require": {
-		"php": ">=5.3"
+		"php": ">=5.3",
+		"wells5609/missing-math": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
