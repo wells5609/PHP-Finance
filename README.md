@@ -32,7 +32,7 @@ Also assume the following (which are, in my opinion, rather optimistic):
 #####Dividend Discount Model
 The DDM states that a stock's current value is equal to the present value of the sum of its future dividends.
 ```php
-$ddm = new \Finance\DividendDiscountModel();
+$ddm = new \Finance\Model\DividendDiscount();
 
 // set required info
 $ddm
@@ -48,7 +48,7 @@ $ddm_value = $ddm->calculate(); // returns "70.04"
 #####Zero Growth Method
 Often used for "mature" firms, this model basically assumes no growth in earnings. The resulting value is simply EPS divided by the discount rate.
 ```php
-$zero = new \Finance\ZeroGrowthModel();
+$zero = new \Finance\Model\ZeroGrowth();
 
 $zero
   ->setEPS(7.34) // Use current EPS for zero growth
@@ -60,7 +60,7 @@ $zgm_value = $zero->calculate(); // returns "81.5555..."
 #####Constant Growth Model
 The constant growth model assumes that the firm's earnings grow at a certain rate for infinity; obviously, this is hard to reconcile with reality, especially for mature or maturing firms.
 ```php
-$cons = new \Finance\ConstantGrowthModel();
+$cons = new \Finance\Model\ConstantGrowth();
 
 $cons
   ->setEPS(7.7) // Use forward EPS for constant growth
