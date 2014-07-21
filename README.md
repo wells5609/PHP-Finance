@@ -11,7 +11,7 @@ Corporate finance PHP library.
 
 ##Requirements
  * PHP 5.3+
- * `wells5609/missing-math` - includes some required mathematical functions like `pv()` and `covariance()`
+ * `wells5609/php-math` - includes some required mathematical functions like `pv()` and `covariance()`
 
 ##Examples
 
