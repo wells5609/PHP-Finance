@@ -1,9 +1,9 @@
 {
-	"name": "wells5609/finance",
+	"name": "wells5609/php-finance",
 	"type": "library",
-	"description": "Corporate finance library for PHP.",
-	"keywords": ["Finance", "Financial", "Corporate", "Stock", "Valuation"],
-	"homepage": "https://github.com/wells5609/Finance-PHP",
+	"description": "Finance library for PHP.",
+	"keywords": ["Finance", "Financial", "Corporate finance", "Stock", "Valuation"],
+	"homepage": "https://github.com/wells5609/PHP-Finance",
 	"license": "MIT",
 	"authors": [
 		{
@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php": ">=5.3",
-		"wells5609/missing-math": "dev-master"
+		"wells5609/php-math": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
